@@ -44,12 +44,14 @@ export const Container = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 768px;
+    border-radius: 0;
   }
 
   @media screen and (max-width: 640px) {
     display: block;
     width: 640px;
     max-width: 100%;
+    border-radius: 0;
   }
 `
 
