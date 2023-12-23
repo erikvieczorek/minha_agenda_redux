@@ -9,12 +9,12 @@ import Register from './pages/Register'
 const routes = createBrowserRouter([
   {
     path: '/',
-    element: <Home />
+    element: <Home />,
   },
   {
     path: '/new',
-    element: <Register />
-  }
+    element: <Register />,
+  },
 ])
 
 function App() {

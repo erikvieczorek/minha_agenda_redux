@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 import variables from '../../styles/variables'
 
-
 export const Aside = styled.aside`
-  background-color:  ${variables.DarkGrey};
+  background-color: ${variables.DarkGrey};
   height: 100%;
   width: 100%;
   padding: 10vh 20px 0 16px;

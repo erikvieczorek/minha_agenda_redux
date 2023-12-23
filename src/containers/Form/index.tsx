@@ -22,7 +22,7 @@ const FormList = () => {
         name,
         phone,
         email,
-        isfavorite: false
+        isfavorite: false,
       })
     )
     setName('')
@@ -52,10 +52,11 @@ const FormList = () => {
           <S.Input
             value={phone === 0 ? '' : phone.toString()}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-              const inputValue = event.target.value;
-              const numericValue = inputValue === '' ? 0 : parseInt(inputValue, 10);
+              const inputValue = event.target.value
+              const numericValue =
+                inputValue === '' ? 0 : parseInt(inputValue, 10)
               if (!isNaN(numericValue)) {
-                setPhone(numericValue);
+                setPhone(numericValue)
               }
             }}
             type="tel"

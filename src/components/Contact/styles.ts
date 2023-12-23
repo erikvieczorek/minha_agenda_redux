@@ -1,17 +1,17 @@
-import { FaRegEnvelope, FaRegUser, FaPhone } from "react-icons/fa"
+import { FaRegEnvelope, FaRegUser, FaPhone } from 'react-icons/fa'
 import styled from 'styled-components'
-import variables from "../../styles/variables"
+import variables from '../../styles/variables'
 
 export const Card = styled.div`
   display: grid;
   grid-template-columns: 80% 20%;
   width: 94%;
-  background-color:  ${variables.DarkBlue};
+  background-color: ${variables.DarkBlue};
   border-radius: 50px;
   padding: 6px 0;
   margin-bottom: 18px;
   box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
-  color:  ${variables.Green};
+  color: ${variables.Green};
 `
 
 export const ContactIcon = styled(FaRegUser)`
@@ -49,7 +49,7 @@ export const InfoItem = styled.li`
 `
 
 export const Info = styled.textarea`
-  color:  ${variables.LighterGrey};
+  color: ${variables.LighterGrey};
   font-size: 20px;
   resize: none;
   max-width: 100%;
@@ -64,7 +64,7 @@ export const Info = styled.textarea`
   overflow: hidden;
 
   &.editing {
-    color:  ${variables.DarkBlue};
-    background-color:  ${variables.LighterGrey};
+    color: ${variables.DarkBlue};
+    background-color: ${variables.LighterGrey};
   }
 `

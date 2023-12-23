@@ -16,9 +16,9 @@ const initialState: ContactsState = {
     },
     {
       id: 2,
-      name: 'Joao Vitor',
+      name: 'Ana Clara',
       phone: 54999999998,
-      email: 'joaovitor@gmail.com',
+      email: 'anaclara@gmail.com',
       isfavorite: false,
     },
     {
@@ -27,8 +27,8 @@ const initialState: ContactsState = {
       phone: 54999999997,
       email: 'joseantonio@gmail.com',
       isfavorite: false,
-    }
-  ]
+    },
+  ],
 }
 
 const contactSlice = createSlice({
@@ -36,14 +36,16 @@ const contactSlice = createSlice({
   initialState,
   reducers: {
     remove: (state, action: PayloadAction<number>) => {
-      state.item = state.item.filter((contact) => contact.id !== action.payload);
+      state.item = state.item.filter((contact) => contact.id !== action.payload)
     },
 
     edit: (state, action: PayloadAction<Contact>) => {
-      const contactIndex = state.item.findIndex((t) => t.id === action.payload.id);
-        if (contactIndex >= 0) {
-          state.item[contactIndex] = action.payload;
-        }
+      const contactIndex = state.item.findIndex(
+        (t) => t.id === action.payload.id
+      )
+      if (contactIndex >= 0) {
+        state.item[contactIndex] = action.payload
+      }
     },
 
     createNewContact: (state, action: PayloadAction<Omit<Contact, 'id'>>) => {
@@ -52,9 +54,9 @@ const contactSlice = createSlice({
           contact.name.toLowerCase() === action.payload.name.toLowerCase()
       )
       if (contactAlreadyExist) {
-        alert('Já existe um contato com esse nome');
+        alert('Já existe um contato com esse nome')
       } else {
-        const lastContact = state.item[state.item.length - 1];
+        const lastContact = state.item[state.item.length - 1]
 
         const newContact = {
           ...action.payload,
@@ -66,14 +68,18 @@ const contactSlice = createSlice({
     },
 
     toggleFavorite: (state, action: PayloadAction<{ id: number }>) => {
-      const contactIndex = state.item.findIndex((t) => t.id === action.payload.id);
-        if (contactIndex >= 0) {
-          state.item[contactIndex].isfavorite = !state.item[contactIndex].isfavorite;
-        }
-    }
-  }
+      const contactIndex = state.item.findIndex(
+        (t) => t.id === action.payload.id
+      )
+      if (contactIndex >= 0) {
+        state.item[contactIndex].isfavorite =
+          !state.item[contactIndex].isfavorite
+      }
+    },
+  },
 })
 
-export const { remove, edit, createNewContact, toggleFavorite } = contactSlice.actions
+export const { remove, edit, createNewContact, toggleFavorite } =
+  contactSlice.actions
 
 export default contactSlice.reducer

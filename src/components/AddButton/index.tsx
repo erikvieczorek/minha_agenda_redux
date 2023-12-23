@@ -1,5 +1,5 @@
 import { AddButton } from './styles'
-import { FaUserPlus } from "react-icons/fa"
+import { FaUserPlus } from 'react-icons/fa'
 
 const addButton = () => (
   <AddButton to="/new">

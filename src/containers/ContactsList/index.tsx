@@ -6,9 +6,11 @@ import * as S from '../../styles'
 import AddButton from '../../components/AddButton'
 
 const ContactList = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const { item } = useSelector((state: RootReducer) => state.contacts)
-  const { input, showFavorites } = useSelector((state: RootReducer) => state.filter)
+  const { input, showFavorites } = useSelector(
+    (state: RootReducer) => state.filter
+  )
 
   const filterAndSortContacts = () => {
     let filteredContacts = item
@@ -16,7 +18,7 @@ const ContactList = () => {
     // Aplica filtro de busca
     filteredContacts = filteredContacts.filter(
       (i) => i.name.toLowerCase().search(input.toLowerCase()) >= 0
-    );
+    )
 
     // Se showFavorites for verdadeiro, filtra apenas os favoritos
     if (showFavorites) {
@@ -24,7 +26,9 @@ const ContactList = () => {
     }
 
     // Ordena os contatos pelo nome em ordem alfabética
-    const sortedContacts = filteredContacts.sort((a, b) => a.name.localeCompare(b.name))
+    const sortedContacts = filteredContacts.sort((a, b) =>
+      a.name.localeCompare(b.name)
+    )
 
     return sortedContacts
   }

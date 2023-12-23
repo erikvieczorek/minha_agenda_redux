@@ -6,5 +6,5 @@ export default {
   Red: '#A9363D',
   Yellow: '#C0AF3E',
   Orange: '#f7803c',
-  DarkBlue: '#143139'
+  DarkBlue: '#143139',
 }

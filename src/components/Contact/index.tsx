@@ -4,11 +4,17 @@ import { useDispatch } from 'react-redux'
 import * as S from './styles'
 import ContactClass from '../../models/Contact'
 import { remove, edit } from '../../store/reducers/contact'
-import { CancelIcon, EditIcon, SaveIcon, DeleteIcon, FavoriteIcon } from '../../styles'
+import {
+  CancelIcon,
+  EditIcon,
+  SaveIcon,
+  DeleteIcon,
+  FavoriteIcon,
+} from '../../styles'
 
 type Props = ContactClass & {
-  isfavorite: boolean;
-  onToggleFavorite: () => void;
+  isfavorite: boolean
+  onToggleFavorite: () => void
 }
 
 const Contact = ({
@@ -26,7 +32,11 @@ const Contact = ({
   const [email, setEmail] = useState('')
 
   useEffect(() => {
-    if (originalName.length > 0 && originalEmail.length > 0 && originalPhone > 0) {
+    if (
+      originalName.length > 0 &&
+      originalEmail.length > 0 &&
+      originalPhone > 0
+    ) {
       setName(originalName)
       setEmail(originalEmail)
       setPhone(originalPhone)
@@ -41,16 +51,16 @@ const Contact = ({
     <S.Card>
       <S.ContainerInfo>
         <S.InfoItem>
-            <S.ContactIcon />
-            <S.Info
-              className={isEditing ? 'editing' : ''}
-              disabled={!isEditing}
-              value={name}
-              onChange={(event: { target: { value: SetStateAction<string> } }) =>
-                setName(event.target.value)
-              }
-            />
-          </S.InfoItem>
+          <S.ContactIcon />
+          <S.Info
+            className={isEditing ? 'editing' : ''}
+            disabled={!isEditing}
+            value={name}
+            onChange={(event: { target: { value: SetStateAction<string> } }) =>
+              setName(event.target.value)
+            }
+          />
+        </S.InfoItem>
         <S.InfoItem>
           <S.PhoneIcon />
           <S.Info
@@ -58,7 +68,7 @@ const Contact = ({
             disabled={!isEditing}
             value={phone === null ? '' : phone.toString()}
             onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => {
-              const inputValue = event.target.value;
+              const inputValue = event.target.value
               const numericValue = parseInt(inputValue, 10)
               if (!isNaN(numericValue)) {
                 setPhone(numericValue)
@@ -81,24 +91,23 @@ const Contact = ({
         </S.InfoItem>
       </S.ContainerInfo>
       <S.ActionBar>
-        <FavoriteIcon isfavorite={isfavorite} onClick={onToggleFavorite}/>
-          {isEditing ? (
-            <>
-              <SaveIcon
-                onClick={() => {
-                  dispatch(edit({ name, phone, email, id, isfavorite }));
-                  setIsEditing(false);
-                }}
-              />
-              <CancelIcon onClick={cancelEditing} />
-            </>
-          ) : (
-            <>
-              <EditIcon onClick={() => setIsEditing(true)} />
-              <DeleteIcon onClick={() => dispatch(remove(id))} />
-            </>
-          )
-        }
+        <FavoriteIcon isfavorite={isfavorite} onClick={onToggleFavorite} />
+        {isEditing ? (
+          <>
+            <SaveIcon
+              onClick={() => {
+                dispatch(edit({ name, phone, email, id, isfavorite }))
+                setIsEditing(false)
+              }}
+            />
+            <CancelIcon onClick={cancelEditing} />
+          </>
+        ) : (
+          <>
+            <EditIcon onClick={() => setIsEditing(true)} />
+            <DeleteIcon onClick={() => dispatch(remove(id))} />
+          </>
+        )}
       </S.ActionBar>
     </S.Card>
   )
