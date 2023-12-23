@@ -1,4 +1,4 @@
-import { useEffect, useState, SetStateAction } from 'react'
+import { useEffect, useState, SetStateAction, useRef } from 'react'
 import { useDispatch } from 'react-redux'
 
 import * as S from './styles'
@@ -30,6 +30,7 @@ const Contact = ({
   const [name, setName] = useState('')
   const [phone, setPhone] = useState<number>(0)
   const [email, setEmail] = useState('')
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null)
 
   useEffect(() => {
     if (
@@ -42,6 +43,13 @@ const Contact = ({
       setPhone(originalPhone)
     }
   }, [originalName, originalEmail, originalPhone])
+
+  useEffect(() => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = '32px'
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`
+    }
+  }, [email])
 
   function cancelEditing() {
     setIsEditing(false)
@@ -81,6 +89,7 @@ const Contact = ({
         <S.InfoItem>
           <S.EmailIcon />
           <S.Info
+            ref={textareaRef}
             className={isEditing ? 'editing' : ''}
             disabled={!isEditing}
             value={email}

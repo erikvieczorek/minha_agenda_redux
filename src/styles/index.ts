@@ -132,6 +132,10 @@ export const SaveIcon = styled(FaUserCheck)`
   cursor: pointer;
   margin-left: 6px;
   animation: ${fadeIn} 0.5s ease-in-out;
+
+  @media screen and (max-width: 640px) {
+    font-size: 26px;
+  }
 `
 export const CancelIcon = styled(FaUserTimes)`
   font-size: 32px;
@@ -139,6 +143,10 @@ export const CancelIcon = styled(FaUserTimes)`
   margin-left: 6px;
   color: ${variables.Red};
   animation: ${fadeIn} 0.5s ease-in-out;
+
+  @media screen and (max-width: 640px) {
+    font-size: 26px;
+  }
 `
 export const EditIcon = styled(FaUserEdit)`
   font-size: 32px;
@@ -146,6 +154,10 @@ export const EditIcon = styled(FaUserEdit)`
   margin-left: 6px;
   color: ${variables.Orange};
   animation: ${fadeIn} 0.5s ease-in-out;
+
+  @media screen and (max-width: 640px) {
+    font-size: 26px;
+  }
 `
 
 export const DeleteIcon = styled(FaRegTrashAlt)`
@@ -153,12 +165,20 @@ export const DeleteIcon = styled(FaRegTrashAlt)`
   cursor: pointer;
   color: ${variables.Red};
   animation: ${fadeIn} 0.3s ease-in-out;
+
+  @media screen and (max-width: 640px) {
+    font-size: 26px;
+  }
 `
 export const FavoriteIcon = styled(FaStar)<Props>`
   color: ${(props) => (props.isfavorite ? 'gold' : 'gray')};
   cursor: pointer;
   font-size: 28px;
   animation: ${fadeIn} 0.5s ease-in-out;
+
+  @media screen and (max-width: 640px) {
+    font-size: 24px;
+  }
 `
 
 export default GlobalStyle
