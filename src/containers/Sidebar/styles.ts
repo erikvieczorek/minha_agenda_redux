@@ -8,6 +8,11 @@ export const Aside = styled.aside`
   width: 100%;
   padding: 10vh 20px 0 16px;
   border: none;
+
+  @media screen and (max-width: 640px) {
+    height: 138px;
+    padding: 22px;
+  }
 `
 
 export const FavoriteButton = styled.button`

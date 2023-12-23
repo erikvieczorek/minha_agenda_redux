@@ -35,6 +35,16 @@ export const Container = styled.div`
   border: 4px solid  ${variables.DarkGrey};
   border-radius: 0 60px;
   box-shadow: inset 0 0 8px  ${variables.DarkGrey};
+
+  @media screen and (max-width:768px) {
+    width: 768px;
+  }
+
+  @media screen and (max-width: 640px) {
+    display: block;
+    width: 640px;
+    max-width: 100%;
+  }
 `
 
 export const MainContainer = styled.main`
@@ -61,10 +71,19 @@ export const Header = styled.ul`
 `
 
 export const Title = styled.h1`
-  color:  ${variables.DarkBlue};;
+  color:  ${variables.DarkBlue};
   font-size: 42px;
   text-align: center;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+  @media screen and (max-width:768px) {
+  font-size: 32px;
+  }
+
+  @media screen and (max-width: 640px) {
+    font-size: 26px;
+    padding: 12px 0;
+  }
 `
 
 export const Input = styled.input`
@@ -106,19 +125,21 @@ export const EditButton = styled.button`
 export const SaveIcon = styled(FaUserCheck)`
   font-size: 32px;
   cursor: pointer;
+  margin-left: 6px;
   animation: ${fadeIn} 0.5s ease-in-out;
 
 `
 export const CancelIcon = styled(FaUserTimes)`
   font-size: 32px;
   cursor: pointer;
+  margin-left: 6px;
   color: ${variables.Red};
   animation: ${fadeIn} 0.5s ease-in-out;
 `
 export const EditIcon = styled(FaUserEdit)`
   font-size: 32px;
   cursor: pointer;
-  margin-left: 8px;
+  margin-left: 6px;
   color:  ${variables.Orange};
   animation: ${fadeIn} 0.5s ease-in-out;
 `
@@ -132,7 +153,7 @@ export const DeleteIcon = styled(FaRegTrashAlt)`
 export const FavoriteIcon = styled(FaStar)<Props>`
   color: ${(props) => (props.isfavorite ? 'gold' : 'gray')};
   cursor: pointer;
-  font-size: 26px;
+  font-size: 28px;
   animation: ${fadeIn} 0.5s ease-in-out;
 `
 

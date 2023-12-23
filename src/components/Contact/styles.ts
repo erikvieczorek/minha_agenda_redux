@@ -46,13 +46,13 @@ export const InfoItem = styled.li`
   padding: 8px;
   padding-left: 42px;
   width: 100%;
-  `
+`
 
 export const Info = styled.textarea`
   color:  ${variables.LighterGrey};
   font-size: 20px;
   resize: none;
-  width: 100%;
+  max-width: 100%;
   border: none;
   border-radius: 32px;
   padding: 0 12px;
@@ -61,9 +61,10 @@ export const Info = styled.textarea`
   outline: none;
   height: 32px;
   transition: color 0.5s ease, background-color 0.5s ease;
+  overflow: hidden;
 
   &.editing {
     color:  ${variables.DarkBlue};
     background-color:  ${variables.LighterGrey};
   }
-  `
+`

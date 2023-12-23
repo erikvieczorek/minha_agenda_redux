@@ -8,4 +8,8 @@ export const AddButton = styled(Link)`
   font-size: 42px;
   color: #3DA234;
   color: ${variables.Green};
+
+  @media screen and (max-width: 640px) {
+    font-size: 30px;
+  }
 `
